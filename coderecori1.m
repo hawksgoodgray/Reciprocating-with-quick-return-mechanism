@@ -2,7 +2,7 @@
 
 clear; clc; close all;
 
-%% ====== ตั้งค่าการ export ======
+%% Export setting
 doVideo = true;          % บันทึกเป็น .mp4 (video)
 doGIF   = false;         % บันทึกเป็น .gif (animation)
 
@@ -55,7 +55,7 @@ h_pathR  = plot(NaN,NaN,'--','Color',[1 0.5 0],'LineWidth',1.2); % path right ra
 
 rack_len = 0.06;   % half rack length
 
-%% ====== เตรียมตัวแปรสำหรับ export ======
+%% variable for export
 if doVideo
     vw = VideoWriter(videoFile,'MPEG-4');
     vw.FrameRate = 1/0.02;   % ค่าประมาณตาม pause ตอน forward
@@ -160,7 +160,7 @@ for k = 1:N
     x_prev = x_rack;
 end
 
-%% ====== ปิดไฟล์วิดีโอ ======
+%% Close video
 if doVideo
     close(vw);
 end
